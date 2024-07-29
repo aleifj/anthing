@@ -8,14 +8,27 @@ internal class Program
         
         int[] num_list = new int[]{1,2,7,10,11};
         int[] inv2 = new int[]{89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99};
-        int num1 = 15, num2 = 99;
-        var strl = new string[]{"I", "Love", "Programmers."};
-        int answer = Solution0726(90);
+        //int num1 = 15, num2 = 99;
+        //var strl = new string[]{"I", "Love", "Programmers."};
+        int answer = Solution0729(4);
         Console.WriteLine(answer);
         //MakeLotto();
-        // 이거 카피하세요
     }
 
+public static int Solution0729(int n)
+{//정수 n이 주어질 때, n이하의 짝수를 모두 더한 값을 return 하도록 solution 함수를 작성해주세요.
+    int answer = 0;
+
+    for(int i = 0; i <= n; i++)
+    {
+        if(i % 2 == 0)
+        {
+            answer += i; 
+        }
+    }
+
+    return answer;
+}
     static int Solution0726(int angle)
     {
         int answer = 0;
@@ -74,7 +87,6 @@ internal class Program
         //PrintIntArray(lotto2.ToArray());
         PrintIntArray(lotto);
     }
-
     // Integer배열에 주어진 값이 있는지 판단하는 함수
     public static bool IsInIntArray(int[] array, int val)
     {
