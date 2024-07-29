@@ -5,7 +5,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        //test
+        
         int[] num_list = new int[]{1,2,7,10,11};
         int[] inv2 = new int[]{89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99};
         int num1 = 15, num2 = 99;
