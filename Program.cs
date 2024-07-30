@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Formats.Asn1;
+using System.Text;
 using Myevan;
 
 internal class Program
@@ -6,18 +7,34 @@ internal class Program
     private static void Main(string[] args)
     {
         
-        int[] num_list = new int[]{1,2,7,10,11};
+        int[] n = new int[]{1, 3, 5, 7, 9};
         int[] inv2 = new int[]{89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99};
         //int num1 = 15, num2 = 99;
         //var strl = new string[]{"I", "Love", "Programmers."};
-        int answer = Solution0729(4);
+        int[] answer = Solution0730(15);
         Console.WriteLine(answer);
-        MakeLotto();
+        //MakeLotto();
+        //PrintIntArray(answer);
 
         //nullable이란 null을 담을 수 없는 int, time의 타입이 null을 담을 수 있게 만든다
         int? i = null;//int타입에 ?삽입.
     }
 
+//프로그래머스에서는 List<>쓸 때 using System.Collections.Generic; 꼭 써줘야함.
+static int[] Solution0730(int n)
+{//정수 n이 매개변수로 주어질 때, n 이하의 홀수가 오름차순으로 담긴 배열을 return하도록 solution 함수를 완성해주세요.
+    //int[] answer = new int[] {};
+    List<int> list = new List<int>();
+
+    for (int i = 1; i <= n; i++)
+    {
+        if(i % 2 != 0)
+        {
+            list.Add(i);            
+        }
+    }
+    return list.ToArray();
+}
 public static int Solution0729(int n)
 {//정수 n이 주어질 때, n이하의 짝수를 모두 더한 값을 return 하도록 solution 함수를 작성해주세요.
     int answer = 0;
