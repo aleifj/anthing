@@ -12,7 +12,10 @@ internal class Program
         //var strl = new string[]{"I", "Love", "Programmers."};
         int answer = Solution0729(4);
         Console.WriteLine(answer);
-        //MakeLotto();
+        MakeLotto();
+
+        //nullable이란 null을 담을 수 없는 int, time의 타입이 null을 담을 수 있게 만든다
+        int? i = null;//int타입에 ?삽입.
     }
 
 public static int Solution0729(int n)
