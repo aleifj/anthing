@@ -7,19 +7,54 @@ internal class Program
     private static void Main(string[] args)
     {
         
-        int[] n = new int[]{1, 3, 5, 7, 9};
+        int[] n = new int[]{1, 3, 5, 7};
         int[] inv2 = new int[]{89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99};
         //int num1 = 15, num2 = 99;
         //var strl = new string[]{"I", "Love", "Programmers."};
-        int[] answer = Solution0730(15);
-        Console.WriteLine(answer);
+        int[] answer = Solution0731(n);
+        //Console.WriteLine(answer);
         //MakeLotto();
-        //PrintIntArray(answer);
+        PrintIntArray(answer);
 
         //nullable이란 null을 담을 수 없는 int, time의 타입이 null을 담을 수 있게 만든다
         int? i = null;//int타입에 ?삽입.
     }
 
+
+    public static int[] Solution0731(int[] num_list) 
+    {//정수가 담긴 리스트 num_list가 주어질 때, num_list의 원소 중 짝수와 홀수의 개수를 담은 배열을 return 하도록 solution 함수를 완성해보세요.
+        //리턴할 배열의 크기가 2개로 일정함, 바로 크기를 잡아서 선언.
+        int[] answer = new int[2];
+        int a = 0;
+        int b = 0;
+        //num_list의 크기만큼 반복한다.
+        for(int i = 0; i < num_list.Length; i++)
+        {
+            if(num_list[i] % 2 == 0)//num_list의 인덱스에 해당하는 값이 짝수라면.
+            {
+                a = a+1;//짝수(a)가 1씩 올라가고.
+            }
+            else//아니면
+            {
+                b = b + 1;//홀수(b)가 1씩 올라간다.
+            }            
+        }
+        answer[0] = a;
+        answer[1] = b;
+        //foreach를 사용할 경우
+        foreach(var item in num_list)
+        {
+            if(item % 2 == 0)
+            {
+                answer[0] += 1;
+            }
+            if(item % 2 != 0)
+            {
+                answer[1] += 1;
+            }
+        }
+        return answer;
+    }
 //프로그래머스에서는 List<>쓸 때 using System.Collections.Generic; 꼭 써줘야함.
 static int[] Solution0730(int n)
 {//정수 n이 매개변수로 주어질 때, n 이하의 홀수가 오름차순으로 담긴 배열을 return하도록 solution 함수를 완성해주세요.
