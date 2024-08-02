@@ -14,7 +14,7 @@ internal class Program
         //var strl = new string[]{"I", "Love", "Programmers."};
         int n = 64;
         int k = 6;
-        int answer = Programmers.Solution0801(n, k);
+        //int answer = Programmers.Solution0801(n, k);
         Console.WriteLine(answer);
         
         
