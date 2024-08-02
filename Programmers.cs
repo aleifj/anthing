@@ -5,6 +5,30 @@ namespace aleifj
 {
     public class Programmers
     {
+        
+        public static string Solution0802(string rsp) //가위바위보.
+        {//가위 바위 보를 내는 순서대로 나타낸 문자열 rsp가 매개변수로 주어질 때, rsp에 저장된 가위 바위 보를 모두 이기는 경우를 순서대로 나타낸 문자열을 return하도록 solution 함수를 완성해보세요.
+            string answer = "";
+            //주어진 string의 크기만큼 반복하다.
+            for (int i = 0; i < rsp.Length; i++)
+            {//차례대로(인덱스에 따라) 주어진 문자열을 나열한다.
+                char chr = rsp[i];
+                if (chr == '2')
+                {
+                    answer += "0";
+                }
+                else if (chr == '0')
+                {
+                    answer += "5";
+                }
+                else
+                {
+                    answer += "2";
+                }
+            }
+            return answer;
+        }
+
         public static int[] Solution0731(int[] num_list)
         {//정수가 담긴 리스트 num_list가 주어질 때, num_list의 원소 중 짝수와 홀수의 개수를 담은 배열을 return 하도록 solution 함수를 완성해보세요.
          //리턴할 배열의 크기가 2개로 일정함, 바로 크기를 잡아서 선언.

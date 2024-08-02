@@ -12,9 +12,8 @@ internal class Program
         int[] inv2 = new int[]{89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99};
         //int num1 = 15, num2 = 99;
         //var strl = new string[]{"I", "Love", "Programmers."};
-        int n = 64;
-        int k = 6;
-        //int answer = Programmers.Solution0801(n, k);
+        //string rsp = "0,2,5";
+        string answer = Programmers.Solution0802("0");
         Console.WriteLine(answer);
         
         
