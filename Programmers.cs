@@ -5,7 +5,24 @@ namespace aleifj
 {
     public class Programmers
     {
-        
+        public static int Solution0805(int[] array, int height)//머쓱이보다 키 큰 사람.
+        {
+            //머쓱이네 반 친구들의 키가 담긴 정수 배열 array와 머쓱이의 키 height가 매개변수로 주어질 때, 머쓱이보다 키 큰 사람 수를 return 하도록 solution 함수를 완성해보세요.
+            int answer = 0;
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] > height)
+                {
+                    answer ++;
+                }
+            }
+            /*foreach(var item in array)//foreach사용.
+            {
+                answer += 1;
+            }*/
+            return answer;
+        }
         public static string Solution0802(string rsp) //가위바위보.
         {//가위 바위 보를 내는 순서대로 나타낸 문자열 rsp가 매개변수로 주어질 때, rsp에 저장된 가위 바위 보를 모두 이기는 경우를 순서대로 나타낸 문자열을 return하도록 solution 함수를 완성해보세요.
             string answer = "";

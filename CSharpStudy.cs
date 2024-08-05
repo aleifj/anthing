@@ -6,7 +6,7 @@ namespace aleifj
 {
     public class CSharpStudy
     {
-        public static enum Direction//enum 열거형.
+        /*public static enum Direction//enum 열거형.
         {//함수 안에서 이넘을 정의할 수 없다.
             East,
             West,
@@ -30,7 +30,7 @@ namespace aleifj
             Console.WriteLine($"your direction is {dir}, value : {(int)dir}");
 
 
-        }
+        }*/
         
 
         static void KoreanJosa()
