@@ -13,8 +13,8 @@ internal class Program
         //int num1 = 15, num2 = 99;
         //var strl = new string[]{"I", "Love", "Programmers."};
         //string rsp = "0,2,5";
-        string answer = Programmers.Solution0802("0");
-        Console.WriteLine(answer);
+        //string answer = Programmers.Solution0802("0");
+        //Console.WriteLine(answer);
         
         
         //Utils.PrintIntArray(answer);//뜻: Utils 안에있는 PrintIntArray를 쓴다.

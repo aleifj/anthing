@@ -6,6 +6,33 @@ namespace aleifj
 {
     public class CSharpStudy
     {
+        public static enum Direction//enum 열거형.
+        {//함수 안에서 이넘을 정의할 수 없다.
+            East,
+            West,
+            South,
+            North
+        }
+        public static void Basic()
+        {
+            Direction dir = Direction.South;
+            switch (dir)
+            {
+                case Direction.West:
+                    break;
+                case Direction.East:
+                    break;
+                case Direction.South:
+                    break;
+                case Direction.North:
+                    break;
+            }
+            Console.WriteLine($"your direction is {dir}, value : {(int)dir}");
+
+
+        }
+        
+
         static void KoreanJosa()
         {
             // 한글 조사 변환 > using Myevan 해야 Korean.Re~ 사용할 수 있다
