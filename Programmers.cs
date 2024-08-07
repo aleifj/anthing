@@ -5,6 +5,31 @@ namespace aleifj
 {
     public class Programmers
     {
+
+
+        public static int Solution0807(int[] dot)//점의 위치 구하기.
+    {//x 좌표 (x, y)를 차례대로 담은 정수 배열 dot이 매개변수로 주어집니다. 좌표 dot이 사분면 중 어디에 속하는지 1, 2, 3, 4 중 하나를 return 하도록 solution 함수를 완성해주세요.
+        int answer = 0;
+        
+        if(dot[0] > 0 && dot[1] > 0)
+        {
+            answer = 1;
+        }
+        else if(dot[0] < 0 && dot[1] > 0)
+        {
+            answer = 2;
+        }
+        else if(dot[0] < 0 && dot[1] < 0)
+        {
+            answer = 3;
+        }
+        else if(dot[0] > 0 && dot[1] < 0)
+        {
+            answer = 4;
+        }
+
+        return answer;
+    }
         public static int[] Solution0806(int[] numbers)//배열 두 배 만들기.
         {//정수 배열 numbers가 매개변수로 주어집니다. numbers의 각 원소에 두배한 원소를 가진 배열을 return하도록 solution 함수를 완성해주세요.
             int[] answer = new int[numbers.Length];
