@@ -9,14 +9,14 @@ internal class Program
     private static void Main(string[] args)
     {
         
-        int[] num_list = new int[]{-7, 9};
+        //int num_list = new int{5500};
         //int[] inv2 = new int[]{89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99};
         //int num1 = 15, num2 = 99;
         //var strl = new string[]{"I", "Love", "Programmers."};
         //string rsp = "0,2,5";
-        int answer = Programmers.Solution0807(num_list);
-        Console.WriteLine(answer);
-        //Utils.PrintIntArray(answer);//뜻: Utils 안에있는 PrintIntArray를 쓴다.
+        int[] answer = Programmers.Solution0808(15000);
+        //Console.WriteLine(answer);
+        Utils.PrintIntArray(answer);//뜻: Utils 안에있는 PrintIntArray를 쓴다.
 
         //nullable이란 null을 담을 수 없는 int, time의 타입이 null을 담을 수 있게 만든다
         //int? i = null;//int타입에 ?삽입.
