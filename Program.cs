@@ -36,7 +36,7 @@ internal class Program
             ai++;
         }
 
-        // ===> while
+        //=> while
         ai = 5;
         int ii = 10;
         while (ii > 0)
@@ -44,6 +44,12 @@ internal class Program
             ai++;
             ii--;
         }
+        //=> do~whild문 으로 해보자.
+        do
+        {
+            ai++;
+            ii--;
+        } while (ii > 0);
         Console.WriteLine(ai);
     }
     static void csSwitch()
