@@ -5,17 +5,55 @@ namespace aleifj
 {
     public class Programmers
     {
-        
+        public static string Solution08092(string my_string, int s, int e)//문자열 뒤집기2.
+        {//문자열 my_string과 정수 s, e가 매개변수로 주어질 때, my_string에서 인덱스 s부터 인덱스 e까지를 뒤집은 문자열을 return 하는 solution 함수를 작성해 주세요.
+            
+            char[] chr = my_string.ToArray();//프로그래머스에서는 ToCharArray로 해야함.
+            Array.Reverse(chr,s,e-s+1);
+
+
+            return new string(chr);
+        }
+        public static string Solution0809(string my_string)//문자열 뒤집기.
+        {//문자열 my_string이 매개변수로 주어집니다. my_string을 거꾸로 뒤집은 문자열을 return하도록 solution 함수를 완성해주세요.
+            string answer = "";
+            //array 사용 시.
+            char[] chr = my_string.ToArray();
+            Array.Reverse(chr);//array의 뒤집기
+            for (int i = 0; i < chr.Length; i++)
+            {
+                answer += chr[i];
+            }
+            //list 사용 시.
+            var list = new List<char>(my_string);
+            list.Reverse();
+            for (int i = 0; i < list.Count; i++)
+            {
+                answer += list[i];
+            }
+            //for 사용 시/
+            for(int i = my_string.Length -1; i >= 0; i--)
+            {
+                answer += my_string[i];
+            }
+            //foreach 사용 시
+            foreach(var item in my_string)
+            {
+                answer = item + answer;
+            }
+
+            return answer;
+        }
         public static int[] Solution0808(int money)//아이스아메리카노.
-    {//한잔에 5,500원입니다. 가지고 있는 돈 money가 매개변수로 주어질 때, 최대로 마실 수 있는 아메리카노의 잔 수와 남는 돈을 순서대로 담은 배열을 return 하도록 solution 함수를 완성해보세요.
-        int[] answer = new int[2];
-        int ice = 5500;
-        
-        answer[0] = money / ice;
-        answer[1] = money % ice;
-        
-        return answer;
-    }//if쓸 필요 없었음.
+        {//한잔에 5,500원입니다. 가지고 있는 돈 money가 매개변수로 주어질 때, 최대로 마실 수 있는 아메리카노의 잔 수와 남는 돈을 순서대로 담은 배열을 return 하도록 solution 함수를 완성해보세요.
+            int[] answer = new int[2];
+            int ice = 5500;
+
+            answer[0] = money / ice;
+            answer[1] = money % ice;
+
+            return answer;
+        }//if쓸 필요 없었음.
         public static int Solution0807(int[] dot)//점의 위치 구하기.
     {//x 좌표 (x, y)를 차례대로 담은 정수 배열 dot이 매개변수로 주어집니다. 좌표 dot이 사분면 중 어디에 속하는지 1, 2, 3, 4 중 하나를 return 하도록 solution 함수를 완성해주세요.
         int answer = 0;
