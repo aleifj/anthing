@@ -5,6 +5,17 @@ namespace aleifj
 {
     public class Programmers
     {
+        public static int[] Solution0812(int[] numbers, int num1, int num2)//배열 자르기
+    {//numbers의 num1번 째 인덱스부터 num2번째 인덱스까지 자른 정수 배열을 return 하도록 solution 함수를 완성해보세요.
+        int len = num2 - num1 + 1;//리턴 할 배열의 크기 구하기
+
+        int[] answer = new int[len];//구한 크기의 배열 선언
+        for(int i = 0; i < len; i++)
+        {
+            answer[i] = numbers[i + num1]; 
+        }
+        return answer;
+    }
         public static string Solution08092(string my_string, int s, int e)//문자열 뒤집기2.
         {//문자열 my_string과 정수 s, e가 매개변수로 주어질 때, my_string에서 인덱스 s부터 인덱스 e까지를 뒤집은 문자열을 return 하는 solution 함수를 작성해 주세요.
             
