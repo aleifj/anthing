@@ -5,22 +5,48 @@ namespace aleifj
 {
     public class Programmers
     {
-        public static int[] Solution0812(int[] numbers, int num1, int num2)//배열 자르기
-    {//numbers의 num1번 째 인덱스부터 num2번째 인덱스까지 자른 정수 배열을 return 하도록 solution 함수를 완성해보세요.
-        int len = num2 - num1 + 1;//리턴 할 배열의 크기 구하기
 
-        int[] answer = new int[len];//구한 크기의 배열 선언
-        for(int i = 0; i < len; i++)
-        {
-            answer[i] = numbers[i + num1]; 
+        public static string Solution0813(string my_string)//모음 제거.
+        {//문자열 my_string이 매개변수로 주어질 때 모음을 제거한 문자열을 return하도록 solution 함수를 완성해주세요.
+            string answer = "";
+
+            answer = my_string.Replace("a", "");
+            answer = answer.Replace("e", "");
+            answer = answer.Replace("i", "");
+            answer = answer.Replace("o", "");
+            answer = answer.Replace("u", "");
+//처음 my_string에 담겨있는 단어를 바꾼다음 answer에 담고, 그 answer에 다음 단어를 바꾸어 담는다.
+            answer = my_string.Replace("a", "").Replace("e", "").Replace("i", "").Replace("o", "").Replace("u", "");
+            //이것도 됨. 아니 이게 되네...
+            foreach(var item in my_string)
+            {//foreach 사용 시.
+                if((item != 'a') &&
+                   (item != 'e') &&
+                   (item != 'i') &&
+                   (item != 'o') &&
+                   (item != 'u'))
+                   {
+                        answer += item;
+                   }
+            }
+            return answer;
         }
-        return answer;
-    }
+        public static int[] Solution0812(int[] numbers, int num1, int num2)//배열 자르기
+        {//numbers의 num1번 째 인덱스부터 num2번째 인덱스까지 자른 정수 배열을 return 하도록 solution 함수를 완성해보세요.
+            int len = num2 - num1 + 1;//리턴 할 배열의 크기 구하기
+
+            int[] answer = new int[len];//구한 크기의 배열 선언
+            for (int i = 0; i < len; i++)
+            {
+                answer[i] = numbers[i + num1];
+            }
+            return answer;
+        }
         public static string Solution08092(string my_string, int s, int e)//문자열 뒤집기2.
         {//문자열 my_string과 정수 s, e가 매개변수로 주어질 때, my_string에서 인덱스 s부터 인덱스 e까지를 뒤집은 문자열을 return 하는 solution 함수를 작성해 주세요.
-            
+
             char[] chr = my_string.ToArray();//프로그래머스에서는 ToCharArray로 해야함.
-            Array.Reverse(chr,s,e-s+1);
+            Array.Reverse(chr, s, e - s + 1);
 
 
             return new string(chr);

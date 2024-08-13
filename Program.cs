@@ -10,13 +10,13 @@ internal class Program
     {
         
         //int num_list = new int{5500};
-        int[] inv2 = new int[]{1, 2, 3, 4, 5};
+        //int[] inv2 = new int[]{1, 2, 3, 4, 5};
         //int num1 = 1; int num2 = 3;
         //var strl = new string[]{"I", "Love", "Programmers."};
-        //string rsp = "0,2,5";
-        int[] answer = Programmers.Solution0812(inv2, 1, 3);
-        //Console.WriteLine(answer);
-        Utils.PrintIntArray(answer);//뜻: Utils 안에있는 PrintIntArray를 쓴다.
+        string my_string = "nice to meet you";
+        string answer = Programmers.Solution0813(my_string);
+        Console.WriteLine(answer);
+        //Utils.PrintIntArray(answer);//뜻: Utils 안에있는 PrintIntArray를 쓴다.
 
         //nullable이란 null을 담을 수 없는 int, time의 타입이 null을 담을 수 있게 만든다
         //int? i = null;//int타입에 ?삽입.
