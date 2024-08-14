@@ -10,11 +10,12 @@ internal class Program
     {
         
         //int num_list = new int{5500};
-        //int[] inv2 = new int[]{1, 2, 3, 4, 5};
-        //int num1 = 1; int num2 = 3;
+        int[] numbers = new int[]{58, 44, 27, 10, 100};
+        int n = 139;
+        //int[] numbers = 34, 5, 71, 29, 100, 34; 
         //var strl = new string[]{"I", "Love", "Programmers."};
-        string my_string = "nice to meet you";
-        string answer = Programmers.Solution0813(my_string);
+        //string my_string = "nice to meet you";
+        int answer = Programmers.Solution0814(numbers, n);
         Console.WriteLine(answer);
         //Utils.PrintIntArray(answer);//뜻: Utils 안에있는 PrintIntArray를 쓴다.
 

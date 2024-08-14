@@ -5,6 +5,21 @@ namespace aleifj
 {
     public class Programmers
     {
+        public static int Solution0814(int[] numbers, int n)//n보다 커질 때까지 더하기
+        {//numbers의 원소를 앞에서부터 하나씩 더하다가 그 합이 n보다 커지는 순간 이때까지 더했던 원소들의 합을 return 하는 solution 함수를 작성해 주세요.
+            int answer = 0;
+            int m = 0;
+            for (int i = 0; i <= numbers.Length; i++)
+            {
+                m += numbers[i];
+                if (n < m)
+                {
+                    answer = m;
+                    break;
+                }
+            }
+            return answer;
+        }
 
         public static string Solution0813(string my_string)//모음 제거.
         {//문자열 my_string이 매개변수로 주어질 때 모음을 제거한 문자열을 return하도록 solution 함수를 완성해주세요.
