@@ -5,6 +5,22 @@ namespace aleifj
 {
     public class Programmers
     {
+        public static int Solution0816(int[] num_list)//첫 번째로 나오는 음수
+        {//정수 리스트 num_list가 주어질 때, 첫 번째로 나오는 음수의 인덱스를 return하도록 solution 함수를 완성해주세요. 음수가 없다면 -1을 return합니다.
+            int answer = -1;
+
+            for (int i = 0; i < num_list.Length; i++)
+            {
+                if (num_list[i] < 0)
+                {
+                    answer = i;
+                    break;
+                }
+            }
+
+            return answer;
+        }
+
         public static int Solution0814(int[] numbers, int n)//n보다 커질 때까지 더하기
         {//numbers의 원소를 앞에서부터 하나씩 더하다가 그 합이 n보다 커지는 순간 이때까지 더했던 원소들의 합을 return 하는 solution 함수를 작성해 주세요.
             int answer = 0;

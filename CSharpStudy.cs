@@ -7,7 +7,7 @@ namespace aleifj
     public class CSharpStudy
     {
 
-        
+
         /*public static enum Direction//enum 열거형.
         {//함수 안에서 이넘을 정의할 수 없다.
             East,
@@ -33,7 +33,36 @@ namespace aleifj
 
 
         }*/
-        
+        public static void DicSample()//0816
+        {//csharpstudy 헤시테이블, 딕셔너리.
+            //Dictionary<string, string> loginData = new Dictionary<string, string>();원형
+            var loginData = new Dictionary<string, string>();
+            //형식 형식명명 = new dictionary<키(key), 값(value)>();
+            loginData.Add("zinine", "password");//위에서 string으로 선언해서, int 쓰면 정수 사용.
+            loginData.Add("whdgus", "qwer");
+            loginData.Add("aleifj", "asdf");
+            loginData.Add("yuyuyu7878", "zxcv1");
+
+            string pw = loginData["zinine"];
+            foreach(var item in loginData)
+            {
+                //Console.WriteLine($"{item.key},{itme.value}");
+            }
+
+            foreach(string item in loginData.Keys)
+            {
+                Console.WriteLine(item);//키만 나옴.values하면 값만 나옴.
+            }
+            string checkid = "uiop";
+            if(loginData.ContainsKey(checkid) == false)
+            {
+                Console.WriteLine($"{checkid}는 없습니다.");
+            }
+            else
+            {
+                Console.WriteLine($"{checkid}의 암호는 {loginData}");
+            }
+        }
 
         static void KoreanJosa()
         {

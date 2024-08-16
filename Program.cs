@@ -10,14 +10,15 @@ internal class Program
     {
         
         //int num_list = new int{5500};
-        int[] numbers = new int[]{58, 44, 27, 10, 100};
+        int[] numbers = new int[]{13, 22, 53, 24, 15, 6};
         int n = 139;
         //int[] numbers = 34, 5, 71, 29, 100, 34; 
         //var strl = new string[]{"I", "Love", "Programmers."};
         //string my_string = "nice to meet you";
-        int answer = Programmers.Solution0814(numbers, n);
+        int answer = Programmers.Solution0816(numbers);
         Console.WriteLine(answer);
         //Utils.PrintIntArray(answer);//뜻: Utils 안에있는 PrintIntArray를 쓴다.
+        //CSharpStudy.DicSample();
 
         //nullable이란 null을 담을 수 없는 int, time의 타입이 null을 담을 수 있게 만든다
         //int? i = null;//int타입에 ?삽입.
