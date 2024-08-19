@@ -7,7 +7,7 @@ namespace aleifj
     public class CSharpStudy
     {
 
-
+        
         /*public static enum Direction//enum 열거형.
         {//함수 안에서 이넘을 정의할 수 없다.
             East,
@@ -30,9 +30,8 @@ namespace aleifj
                     break;
             }
             Console.WriteLine($"your direction is {dir}, value : {(int)dir}");
-
-
         }*/
+
         public static void DicSample()//0816
         {//csharpstudy 헤시테이블, 딕셔너리.
             //Dictionary<string, string> loginData = new Dictionary<string, string>();원형

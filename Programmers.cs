@@ -1,10 +1,78 @@
 using System;
+using System.Reflection.Metadata;
 using System.Text;
 
 namespace aleifj
 {
+
+    
     public class Programmers
     {
+
+        public static string Solution08192(int[] numLog)//수 조작하기2
+        {//정수 배열 numLog가 주어집니다. 처음에 numLog[0]에서 부터 시작해 "w", "a", "s", "d"로 이루어진 문자열을 입력으로 받아 순서대로 다음과 같은 조작을 했다고 합시다.
+            string answer = "";
+
+            for (int i = 0; i < numLog.Length - 1; i++)
+            {
+                int var = numLog[i + 1] - numLog[i];
+                /*if (var == 1)
+                {//if사용 시
+                    answer += 'w';
+                }
+                else if (var == -1)
+                {
+                    answer += 's';
+                }
+                else if (var == 10)
+                {
+                    answer += 'd';
+                }
+                else if (var == -10)
+                {
+                    answer += 'a';
+                }*/
+                switch (var)
+                {//switch사용 시
+                    case 1:
+                        answer += 'w';
+                        break;
+                    case -1:
+                        answer += 's';
+                        break;
+                    case 10:
+                        answer += 'd';
+                        break;
+                    case -10:
+                        answer += 'a';
+                        break;
+                }
+            }
+            return answer;
+        }
+
+        public static int Solution0819(int n, string control)//수 조작하기.
+        {//정수 n과 문자열 control이 주어집니다. control은 "w", "a", "s", "d"의 4개의 문자로 이루어져 있으며, control의 앞에서부터 순서대로 문자에 따라 n의 값을 바꿉니다.
+            foreach (var item in control)
+            {
+                switch (item)
+                {
+                    case 'w':
+                        n += 1;
+                        break;
+                    case 'a':
+                        n -= 10;
+                        break;
+                    case 's':
+                        n -= 1;
+                        break;
+                    case 'd':
+                        n += 10;
+                        break;
+                }
+            }
+            return n;
+        }
         public static int Solution0816(int[] num_list)//첫 번째로 나오는 음수
         {//정수 리스트 num_list가 주어질 때, 첫 번째로 나오는 음수의 인덱스를 return하도록 solution 함수를 완성해주세요. 음수가 없다면 -1을 return합니다.
             int answer = -1;

@@ -3,19 +3,47 @@ using System.Text;
 using Myevan;
 using aleifj;
 using System.Globalization;
+using System.Runtime.CompilerServices;
 
 internal class Program
 {
+
+    /*public struct Scustomer
+    {//struct는 상속 불가
+        public string name;
+        public int age;
+        public string GetCData()
+        {
+            string data = $"{name}, {age}";
+            return data;
+        }
+    }
+    public class Ccustomer
+    {//class는 상속 가능
+        public string name;
+        public int age;
+        public string GetSData()
+        {
+            string data = $"{name}, {age}";
+            return data;
+        }
+    }*/
     private static void Main(string[] args)
     {
-        
-        //int num_list = new int{5500};
-        int[] numbers = new int[]{13, 22, 53, 24, 15, 6};
-        int n = 139;
-        //int[] numbers = 34, 5, 71, 29, 100, 34; 
-        //var strl = new string[]{"I", "Love", "Programmers."};
+        /*Scustomer sc;
+        sc.name = "Lee";
+        sc.age = 30;
+        Console.WriteLine(sc.GetCData());
+
+        Ccustomer cc = new Ccustomer();
+        cc.name = "Kim";
+        cc.age = 26;
+        Console.WriteLine(cc.GetSData());*/
+
+        int[] numLog = new int[]{0, 1, 0, 10, 0, 1, 0, 10, 0, -1, -2, -1};
+        //int n = 0;       
         //string my_string = "nice to meet you";
-        int answer = Programmers.Solution0816(numbers);
+        string answer = Programmers.Solution08192(numLog);
         Console.WriteLine(answer);
         //Utils.PrintIntArray(answer);//뜻: Utils 안에있는 PrintIntArray를 쓴다.
         //CSharpStudy.DicSample();
