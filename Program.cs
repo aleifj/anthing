@@ -7,8 +7,7 @@ using System.Runtime.CompilerServices;
 
 internal class Program
 {
-
-    /*public struct Scustomer
+    public struct Scustomer
     {//struct는 상속 불가
         public string name;
         public int age;
@@ -27,7 +26,8 @@ internal class Program
             string data = $"{name}, {age}";
             return data;
         }
-    }*/
+        
+    }
     private static void Main(string[] args)
     {
         /*Scustomer sc;
@@ -40,10 +40,10 @@ internal class Program
         cc.age = 26;
         Console.WriteLine(cc.GetSData());*/
 
-        int[] numLog = new int[]{0, 1, 0, 10, 0, 1, 0, 10, 0, -1, -2, -1};
-        //int n = 0;       
-        //string my_string = "nice to meet you";
-        string answer = Programmers.Solution08192(numLog);
+        //int[] numLog = new int[]{0, 1, 0, 10, 0, 1, 0, 10, 0, -1, -2, -1};
+        int a = 2;
+        int b = 91;
+        int answer = Programmers.Solution0820(a, b);
         Console.WriteLine(answer);
         //Utils.PrintIntArray(answer);//뜻: Utils 안에있는 PrintIntArray를 쓴다.
         //CSharpStudy.DicSample();

@@ -6,8 +6,66 @@ namespace aleifj
 {
     public class CSharpStudy
     {
+        public class chessPiece
+        {//부모클레스
+            public virtual void Move()
+            {//virtual을 붙이면 자식클래스에서 Override를 써 부모의 상속을 변경할 수 있음.
+                Console.WriteLine("do not move");
+            }
+            public void SerPosition(int x)
+            {//오버로딩:같은 이름의 함수를 다른 내용물로 많이 만드는거?
 
-        
+            }
+            public void SerPosition(int x, int y)
+            {//오버로딩:같은 이름의 함수를 다른 내용물로 많이 만드는거?
+
+            }
+            public void SerPosition()
+            {//오버로딩:같은 이름의 함수를 다른 내용물로 많이 만드는거?
+
+            }
+            public void SerPosition(char x)
+            {//오버로딩:같은 이름의 함수를 다른 내용물로 많이 만드는거?
+
+            }
+        }
+        public class Knight : chessPiece
+        {//자식클레스
+            public override void Move()
+            {//override를 써 부모의 상속 변경.
+                Console.WriteLine("말처럼 이동 가능");
+            }
+        }
+        public class Rook : chessPiece
+        {//자식클레스
+            public override void Move()
+            {
+                Console.WriteLine("직선 이동 가능");
+            }
+        }
+        public class vishop : chessPiece
+        {//자식클레스
+            public override void Move()
+            {
+                Console.WriteLine("대각선 이동 가능");
+            }
+        }
+
+ /*chessPiece cp = new chessPiece();
+            chessPiece Kn = new Knight();//부모형식에서 자식형식들의 상속 형태.
+            chessPiece ro = new Rook();//ChessPiece을 Knight,Rook,Vishop에게 상속함.
+            chessPiece vi = new vishop();//왼쪽에 있는게 부모, 오른쪽에 잇는게 자식클래스.
+
+            cp.Move();
+            Kn.Move();
+            ro.Move();
+            vi.Move();
+
+            cp.SerPosition();//오버로딩    
+            cp.SerPosition(1);//이런식으로 
+            cp.SerPosition(1, 2);//불러 
+            cp.SerPosition('z');//옴.*/
+            
         /*public static enum Direction//enum 열거형.
         {//함수 안에서 이넘을 정의할 수 없다.
             East,

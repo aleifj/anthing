@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Reflection.Metadata;
 using System.Text;
 
@@ -8,7 +9,23 @@ namespace aleifj
     
     public class Programmers
     {
-
+        public static int Solution0820(int a, int b)//두 수의 연산값 비교하기
+        {//양의 정수 a와 b가 주어졌을 때, a ⊕ b와 2 * a * b 중 더 큰 값을 return하는 solution 함수를 완성해 주세요.
+        //단, a ⊕ b와 2 * a * b가 같으면 a ⊕ b를 return 합니다.
+            int answer = 0;
+            string apb = $"{a}{b}";
+            int iapb = Convert.ToInt32(apb);
+            int tab = 2 * a*b;
+            if(iapb == tab)
+            {
+                answer = iapb;
+            }
+            else
+            {
+                answer = Math.Max(iapb, tab);
+            }
+            return answer;
+        }
         public static string Solution08192(int[] numLog)//수 조작하기2
         {//정수 배열 numLog가 주어집니다. 처음에 numLog[0]에서 부터 시작해 "w", "a", "s", "d"로 이루어진 문자열을 입력으로 받아 순서대로 다음과 같은 조작을 했다고 합시다.
             string answer = "";
