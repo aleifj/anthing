@@ -7,6 +7,41 @@ using System.Runtime.CompilerServices;
 
 internal class Program
 {
+    class ListClass
+    {
+        List<int> list = new List<int>();
+    }
+    public static void NullableSample()
+    {
+        List<int> list = null;//new List<int>();
+        //?. : null이 아니면 참조하고, null이면 null
+        //list?.뜻 : 리스트가 null이냐?
+        ListClass lc = null;//ListClass잡았지만 아직 안쓴다.
+        ListClass Lc = new ListClass();//ListClass잡았다.
+        //Console.WriteLine(lc?.list.Count);리스트가 null이면 출력해라
+        //?? : null이면 오른쪽 값으로 처리
+        object obj = new Dictionary<int, int>();
+        object a = obj ?? new List<int>();
+        //Console.WriteLine(a);
+    }
+    public static int GetListCount(List<int>list)
+    {//이거 3개 다 같은 의미임.
+        if(list == null)
+        {
+            return 0;            
+        }
+        else{
+            return list.Count;
+        }
+
+        return(list == null) ? 0 : list.Count;
+
+        return list?.Count ?? 0;
+        //list가 null인가?. null이면 0, 아니면 Count를 return하라
+    }
+
+
+
     public struct Scustomer
     {//struct는 상속 불가
         public string name;
@@ -41,11 +76,11 @@ internal class Program
         Console.WriteLine(cc.GetSData());*/
 
         //int[] numLog = new int[]{0, 1, 0, 10, 0, 1, 0, 10, 0, -1, -2, -1};
-        int a = 2;
-        int b = 91;
-        int answer = Programmers.Solution0820(a, b);
-        Console.WriteLine(answer);
-        //Utils.PrintIntArray(answer);//뜻: Utils 안에있는 PrintIntArray를 쓴다.
+        int start_num = 3;
+        int end_num = 10;
+        int[] answer = Programmers.Solution0821(start_num, end_num);
+        //Console.WriteLine(answer);
+        Utils.PrintIntArray(answer);//뜻: Utils 안에있는 PrintIntArray를 쓴다.
         //CSharpStudy.DicSample();
 
         //nullable이란 null을 담을 수 없는 int, time의 타입이 null을 담을 수 있게 만든다

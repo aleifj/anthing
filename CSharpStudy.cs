@@ -6,6 +6,21 @@ namespace aleifj
 {
     public class CSharpStudy
     {
+        public static void CompareTo()
+        {
+            int a = 0;//2개가 같으면 0나옴
+            int b = 1;
+            a.CompareTo(b);//a를 기준으로 b와 비교하라.
+            string s1 = "abc";
+            string s2 = "aaa";
+            s1.CompareTo(s2);
+            if (s1.CompareTo(s2) == 0)
+            {//s1이 s2와 같은것이 참이라면...
+            }
+            StringBuilder sb = new StringBuilder();
+            sb.Append(s1);
+        }
+
         public class chessPiece
         {//부모클레스
             public virtual void Move()

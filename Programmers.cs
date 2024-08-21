@@ -9,9 +9,23 @@ namespace aleifj
     
     public class Programmers
     {
+        public static int[] Solution0821(int start_num, int end_num)//카운트 업
+        {//정수 start_num와 end_num가 주어질 때, start_num부터 end_num까지의 숫자를 차례로 담은 리스트를 return하도록 solution 함수를 완성해주세요.
+            int len = end_num - start_num + 1;//배열의 크기를 먼저 잡는다
+
+            int[] answer = new int[len];//크기만큼 배열을 잡는다
+
+            for (int i = 0; i < answer.Length; i++)//잡은 배열을 반복한다
+            {
+                answer[i] = start_num + i;//start부터 반복해서 넣는다
+            }
+
+            return answer;
+        }
+
         public static int Solution0820(int a, int b)//두 수의 연산값 비교하기
         {//양의 정수 a와 b가 주어졌을 때, a ⊕ b와 2 * a * b 중 더 큰 값을 return하는 solution 함수를 완성해 주세요.
-        //단, a ⊕ b와 2 * a * b가 같으면 a ⊕ b를 return 합니다.
+         //단, a ⊕ b와 2 * a * b가 같으면 a ⊕ b를 return 합니다.
             int answer = 0;
             string apb = $"{a}{b}";
             int iapb = Convert.ToInt32(apb);

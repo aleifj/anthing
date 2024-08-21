@@ -4,7 +4,10 @@ namespace aleifj
 {
     public class Utils
     {
-        // Integer 배열을 한줄에 출력해주는 함수
+        /// <summary>
+        /// Integer 배열을 한줄에 출력해주는 함수
+        /// </summary>
+        /// <param name="answer">정수만 가능</param>
         public static void PrintIntArray(int[] answer)
         {
             for (int i = 0; i < answer.Length; i++)
