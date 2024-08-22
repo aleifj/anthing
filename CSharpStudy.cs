@@ -1,11 +1,40 @@
 using System;
 using Myevan;
 using System.Text;
+using System.Runtime.CompilerServices;
 
 namespace aleifj
 {
     public class CSharpStudy
     {
+
+        public static void NamedParam(string name,int age, int money)
+        {//Named파라미터에 관하여.
+        }
+        public static void NamedParam2(string name, int age = 1, int money = 0){}    
+        public static void NamedSample()
+        {//위의 형식만 맟춘다면 형태 상관없이 막 써도 NamedParam는 다 알아먹음.
+            NamedParam("Lee",40,1000);
+            NamedParam(name:"Kim",money:10,age:10);
+            NamedParam(age:25, name:"Park", money:30);
+        //몇 개 빼먹어도 상관없음,오버로딩 처럼 보이나 그것은 아님.
+            NamedParam2("Choi", 57, 1000000);
+            NamedParam2("Yoon");
+            NamedParam2("Cho", money:10000);
+        }
+
+
+        public static void Calucate()
+        {//두 값의 체인지
+            int x = 10;
+            int y = 20;
+            int temp = x;
+            x = y;
+            y = temp;
+
+            //Console.WriteLine($"final x:{x}, y:{y}");
+        }
+
         public static void CompareTo()
         {
             int a = 0;//2개가 같으면 0나옴

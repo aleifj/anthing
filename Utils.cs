@@ -5,6 +5,19 @@ namespace aleifj
     public class Utils
     {
         /// <summary>
+        /// 두 개의 int값을 Swap 해주는 함수.
+        /// pass by reference 형식으로 잡아야 한다.
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        public static void Swap(ref int x, ref int y)
+        {
+            int temp = x;
+            x = y;
+            y = temp;
+        }
+
+        /// <summary>
         /// Integer 배열을 한줄에 출력해주는 함수
         /// </summary>
         /// <param name="answer">정수만 가능</param>

@@ -76,16 +76,18 @@ internal class Program
         Console.WriteLine(cc.GetSData());*/
 
         //int[] numLog = new int[]{0, 1, 0, 10, 0, 1, 0, 10, 0, -1, -2, -1};
-        int start_num = 3;
-        int end_num = 10;
-        int[] answer = Programmers.Solution0821(start_num, end_num);
-        //Console.WriteLine(answer);
-        Utils.PrintIntArray(answer);//뜻: Utils 안에있는 PrintIntArray를 쓴다.
+        int[] num_list = {-1, 2, 5, 6, 3};
+        int answer = Programmers.Solution0822(num_list);
+        Console.WriteLine(answer);
+        //Utils.PrintIntArray(answer);//뜻: Utils 안에있는 PrintIntArray를 쓴다.
         //CSharpStudy.DicSample();
 
+    
         //nullable이란 null을 담을 수 없는 int, time의 타입이 null을 담을 수 있게 만든다
         //int? i = null;//int타입에 ?삽입.
     }
+
+    
     static void WhileSample()
     {
         int ai = 0;

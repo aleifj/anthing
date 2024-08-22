@@ -1,14 +1,47 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Formats.Asn1;
 using System.Reflection.Metadata;
 using System.Text;
 
 namespace aleifj
 {
-
-    
     public class Programmers
     {
+
+
+        public static int Solution0822(int[] num_list)//홀수 vs 짝수
+        {//가장 첫 번째 원소를 1번 원소라고 할 때, 홀수 번째 원소들의 합과 짝수 번째 원소들의 합 중 큰 값을 return 하도록 solution 함수를 완성해주세요. 두 값이 같을 경우 그 값을 return합니다.
+            
+            //int idx = 1;
+            int ON = 0;
+            int EV = 0;
+
+            /*foreach (int item in num_list)
+            {
+                if (idx % 2 == 1)
+                    ON += item;
+                else
+                    EV += item;
+                idx++;
+            }
+            return Math.Max(ON, EV);*/
+
+            List<int> list = new List<int>(num_list);
+            for (int i = 0; i < num_list.Length; i++)
+            {
+                if (i % 2 == 1)
+                {
+                    ON += num_list[i];
+                }
+                else if (i % 2 == 0)
+                {
+                    EV += num_list[i];
+                }
+                 
+            }
+            return Math.Max(ON, EV);
+        }
         public static int[] Solution0821(int start_num, int end_num)//카운트 업
         {//정수 start_num와 end_num가 주어질 때, start_num부터 end_num까지의 숫자를 차례로 담은 리스트를 return하도록 solution 함수를 완성해주세요.
             int len = end_num - start_num + 1;//배열의 크기를 먼저 잡는다
