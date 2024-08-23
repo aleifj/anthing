@@ -7,7 +7,7 @@ namespace aleifj
 {
     public class CSharpStudy
     {
-
+        #region NamedParam
         public static void NamedParam(string name,int age, int money)
         {//Named파라미터에 관하여.
         }
@@ -22,7 +22,7 @@ namespace aleifj
             NamedParam2("Yoon");
             NamedParam2("Cho", money:10000);
         }
-
+        #endregion NamedParam
 
         public static void Calucate()
         {//두 값의 체인지
@@ -49,7 +49,7 @@ namespace aleifj
             StringBuilder sb = new StringBuilder();
             sb.Append(s1);
         }
-
+        #region 상속,오버로딩
         public class chessPiece
         {//부모클레스
             public virtual void Move()
@@ -133,7 +133,7 @@ namespace aleifj
             }
             Console.WriteLine($"your direction is {dir}, value : {(int)dir}");
         }*/
-
+        #endregion 상속, 오버로딩
         public static void DicSample()//0816
         {//csharpstudy 헤시테이블, 딕셔너리.
             //Dictionary<string, string> loginData = new Dictionary<string, string>();원형

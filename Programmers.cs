@@ -9,10 +9,20 @@ namespace aleifj
     public class Programmers
     {
 
+        public static int Solution0823(int[] box, int n)//주사위의 개수
+        {//배열 box와 주사위 모서리의 길이 정수 n이 매개변수로 주어졌을 때, 상자에 들어갈 수 있는 주사위의 최대 개수를 return 하도록 solution 함수를 완성해주세요.
+            int answer = 0;
 
+            int garo = box[0] / n;
+            int syero = box[1] / n;
+            int noppi = box[2] / n;
+            answer = garo * syero * noppi;
+
+            return answer;
+        }
         public static int Solution0822(int[] num_list)//홀수 vs 짝수
         {//가장 첫 번째 원소를 1번 원소라고 할 때, 홀수 번째 원소들의 합과 짝수 번째 원소들의 합 중 큰 값을 return 하도록 solution 함수를 완성해주세요. 두 값이 같을 경우 그 값을 return합니다.
-            
+
             //int idx = 1;
             int ON = 0;
             int EV = 0;
