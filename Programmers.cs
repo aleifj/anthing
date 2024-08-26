@@ -8,7 +8,25 @@ namespace aleifj
 {
     public class Programmers
     {
-
+        public static string Solution0826(string n_str)//0 떼기
+        {//정수로 이루어진 문자열 n_str이 주어질 때, n_str의 가장 왼쪽에 처음으로 등장하는 0들을 뗀 문자열을 return하도록 solution 함수를 완성해주세요.
+            string answer = "";
+            
+            bool zero = true;
+            while(zero)
+            {
+                if(n_str[0] == '0')
+                {
+                    n_str = n_str.Substring(1, n_str.Length -1);
+                }
+                else
+                {
+                    zero = false;
+                }
+            }
+            answer = n_str;
+            return answer;
+        }
         public static int Solution0823(int[] box, int n)//주사위의 개수
         {//배열 box와 주사위 모서리의 길이 정수 n이 매개변수로 주어졌을 때, 상자에 들어갈 수 있는 주사위의 최대 개수를 return 하도록 solution 함수를 완성해주세요.
             int answer = 0;
