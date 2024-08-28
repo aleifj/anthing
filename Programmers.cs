@@ -1,23 +1,58 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Formats.Asn1;
+using System.Globalization;
 using System.Reflection.Metadata;
 using System.Text;
+
 
 namespace aleifj
 {
     public class Programmers
     {
+        public static int Solution08282(int a, int b)//주사위 게임1
+        {//두 정수 a와 b가 매개변수로 주어질 때, 얻는 점수를 return 하는 solution 함수를 작성해 주세요.
+            int answer = 0;
+
+            if(a % 2 != 0 && b % 2 != 0)
+            {
+                answer = (a * a) +(b * b); 
+            }
+            else if(a % 2 == 0 && b % 2 == 0)
+            {
+                answer = Math.Abs(a - b);
+            }
+            else
+            {
+                answer = 2 * (a + b);
+            }
+
+            return answer;
+        }
+
+        public static int[] Solution0828(int[] num_list)//뒤에서 5등 위로,using System.Collections.Generic;
+        {//정수로 이루어진 리스트 num_list가 주어집니다. num_list에서 가장 작은 5개의 수를 제외한 수들을 오름차순으로 담은 리스트를 return하도록 solution 함수를 완성해주세요.
+
+            //list.sort사용
+            List<int> list = new List<int>(num_list);
+            List<int> relist = new List<int>();
+            list.Sort();//오름차순
+            for(int i = 5; i < list.Count; i++)
+            {
+                relist.Add(list[i]);
+            }
+            return relist.ToArray();
+        }
         public static string Solution0826(string n_str)//0 떼기
         {//정수로 이루어진 문자열 n_str이 주어질 때, n_str의 가장 왼쪽에 처음으로 등장하는 0들을 뗀 문자열을 return하도록 solution 함수를 완성해주세요.
             string answer = "";
-            
+
             bool zero = true;
-            while(zero)
+            while (zero)
             {
-                if(n_str[0] == '0')
+                if (n_str[0] == '0')
                 {
-                    n_str = n_str.Substring(1, n_str.Length -1);
+                    n_str = n_str.Substring(1, n_str.Length - 1);
                 }
                 else
                 {

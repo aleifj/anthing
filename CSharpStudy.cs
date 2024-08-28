@@ -2,53 +2,53 @@ using System;
 using Myevan;
 using System.Text;
 using System.Runtime.CompilerServices;
+using System.Data.SqlTypes;
 
 namespace aleifj
 {
-    public class CSharpStudy
+    /*public class CSharpStudy
     {
-        #region NamedParam
-        public static void NamedParam(string name,int age, int money)
-        {//Named파라미터에 관하여.
-        }
-        public static void NamedParam2(string name, int age = 1, int money = 0){}    
-        public static void NamedSample()
-        {//위의 형식만 맟춘다면 형태 상관없이 막 써도 NamedParam는 다 알아먹음.
-            NamedParam("Lee",40,1000);
-            NamedParam(name:"Kim",money:10,age:10);
-            NamedParam(age:25, name:"Park", money:30);
-        //몇 개 빼먹어도 상관없음,오버로딩 처럼 보이나 그것은 아님.
-            NamedParam2("Choi", 57, 1000000);
-            NamedParam2("Yoon");
-            NamedParam2("Cho", money:10000);
-        }
-        #endregion NamedParam
-
-        public static void Calucate()
-        {//두 값의 체인지
-            int x = 10;
-            int y = 20;
-            int temp = x;
-            x = y;
-            y = temp;
-
-            //Console.WriteLine($"final x:{x}, y:{y}");
-        }
-
-        public static void CompareTo()
-        {
-            int a = 0;//2개가 같으면 0나옴
-            int b = 1;
-            a.CompareTo(b);//a를 기준으로 b와 비교하라.
-            string s1 = "abc";
-            string s2 = "aaa";
-            s1.CompareTo(s2);
-            if (s1.CompareTo(s2) == 0)
-            {//s1이 s2와 같은것이 참이라면...
+    public static void NamedParam(string name, int age, int money)
+        {//Named파라미터에 관하여.}
+#region 
+            public static void NamedParam2(string name, int age = 1, int money = 0) { }
+            public static void NamedSample()
+            {//위의 형식만 맟춘다면 형태 상관없이 막 써도 NamedParam는 다 알아먹음.
+                NamedParam("Lee", 40, 1000);
+                NamedParam(name: "Kim", money: 10, age: 10);
+                NamedParam(age: 25, name: "Park", money: 30);
+                //몇 개 빼먹어도 상관없음,오버로딩 처럼 보이나 그것은 아님.
+                NamedParam2("Choi", 57, 1000000);
+                NamedParam2("Yoon");
+                NamedParam2("Cho", money: 10000);
             }
-            StringBuilder sb = new StringBuilder();
-            sb.Append(s1);
-        }
+            #endregion NamedParam
+
+            public static void Calucate()
+            {//두 값의 체인지
+                int x = 10;
+                int y = 20;
+                int temp = x;
+                x = y;
+                y = temp;
+
+                //Console.WriteLine($"final x:{x}, y:{y}");
+            }
+
+            public static void CompareTo()
+            {
+                int a = 0;//2개가 같으면 0나옴
+                int b = 1;
+                a.CompareTo(b);//a를 기준으로 b와 비교하라.
+                string s1 = "abc";
+                string s2 = "aaa";
+                s1.CompareTo(s2);
+                if (s1.CompareTo(s2) == 0)
+                {//s1이 s2와 같은것이 참이라면...
+                }
+                StringBuilder sb = new StringBuilder();
+                sb.Append(s1);
+            }
         #region 상속,오버로딩
         public class chessPiece
         {//부모클레스
@@ -95,21 +95,21 @@ namespace aleifj
             }
         }
 
- /*chessPiece cp = new chessPiece();
-            chessPiece Kn = new Knight();//부모형식에서 자식형식들의 상속 형태.
-            chessPiece ro = new Rook();//ChessPiece을 Knight,Rook,Vishop에게 상속함.
-            chessPiece vi = new vishop();//왼쪽에 있는게 부모, 오른쪽에 잇는게 자식클래스.
+        /*chessPiece cp = new chessPiece();
+                   chessPiece Kn = new Knight();//부모형식에서 자식형식들의 상속 형태.
+                   chessPiece ro = new Rook();//ChessPiece을 Knight,Rook,Vishop에게 상속함.
+                   chessPiece vi = new vishop();//왼쪽에 있는게 부모, 오른쪽에 잇는게 자식클래스.
 
-            cp.Move();
-            Kn.Move();
-            ro.Move();
-            vi.Move();
+                   cp.Move();
+                   Kn.Move();
+                   ro.Move();
+                   vi.Move();
 
-            cp.SerPosition();//오버로딩    
-            cp.SerPosition(1);//이런식으로 
-            cp.SerPosition(1, 2);//불러 
-            cp.SerPosition('z');//옴.*/
-            
+                   cp.SerPosition();//오버로딩    
+                   cp.SerPosition(1);//이런식으로 
+                   cp.SerPosition(1, 2);//불러 
+                   cp.SerPosition('z');//옴.*/
+
         /*public static enum Direction//enum 열거형.
         {//함수 안에서 이넘을 정의할 수 없다.
             East,
@@ -133,10 +133,10 @@ namespace aleifj
             }
             Console.WriteLine($"your direction is {dir}, value : {(int)dir}");
         }*/
-        #endregion 상속, 오버로딩
+        /*#endregion 상속, 오버로딩
         public static void DicSample()//0816
         {//csharpstudy 헤시테이블, 딕셔너리.
-            //Dictionary<string, string> loginData = new Dictionary<string, string>();원형
+         //Dictionary<string, string> loginData = new Dictionary<string, string>();원형
             var loginData = new Dictionary<string, string>();
             //형식 형식명명 = new dictionary<키(key), 값(value)>();
             loginData.Add("zinine", "password");//위에서 string으로 선언해서, int 쓰면 정수 사용.
@@ -145,17 +145,17 @@ namespace aleifj
             loginData.Add("yuyuyu7878", "zxcv1");
 
             string pw = loginData["zinine"];
-            foreach(var item in loginData)
+            foreach (var item in loginData)
             {
                 //Console.WriteLine($"{item.key},{itme.value}");
             }
 
-            foreach(string item in loginData.Keys)
+            foreach (string item in loginData.Keys)
             {
                 Console.WriteLine(item);//키만 나옴.values하면 값만 나옴.
             }
             string checkid = "uiop";
-            if(loginData.ContainsKey(checkid) == false)
+            if (loginData.ContainsKey(checkid) == false)
             {
                 Console.WriteLine($"{checkid}는 없습니다.");
             }
@@ -243,8 +243,7 @@ namespace aleifj
             //Func();
             string[] city = new string[5] { "도쿄", "타이베이", "오사카", "홍콩", "발리" };
             var country = new string[5] { "일본", "대만", "일본", "중국", "인도네시아" };
-            string[,] trip = new string[2, 5]{{"도쿄", "타이베이", "오사카", "홍콩", "발리"},
-        {"일본", "대만", "일본", "중국", "인도네시아"}};
+            string[,] trip = new string[2, 5] { { "도쿄", "타이베이", "오사카", "홍콩", "발리" }, { "일본", "대만", "일본", "중국", "인도네시아" } };
 
             // 하니가 3살 때 코나키타발루 를 다녀온것을 기억했다. 이걸 list로 만들어 보자
             List<string> city2 = new List<string>(city);
@@ -257,7 +256,6 @@ namespace aleifj
 
             return string.Empty;
         }
-
-
-    }
+    }*/
+    
 }

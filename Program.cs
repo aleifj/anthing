@@ -76,10 +76,10 @@ internal class Program
         Console.WriteLine(cc.GetSData());*/
 
         //int[] numLog = new int[]{0, 1, 0, 10, 0, 1, 0, 10, 0, -1, -2, -1};
-        string n_str = "854020";
-        string answer = Programmers.Solution0826(n_str);
-        Console.WriteLine(answer);
-        //Utils.PrintIntArray(answer);//뜻: Utils 안에있는 PrintIntArray를 쓴다.
+        int[] num_list = {12, 4, 15, 46, 38, 1, 14, 56, 32, 10};
+        int[] answer = Programmers.Solution0828(num_list);
+        //Console.WriteLine(answer);
+        Utils.PrintIntArray(answer);//뜻: Utils 안에있는 PrintIntArray를 쓴다.
         //CSharpStudy.DicSample();
 
     
