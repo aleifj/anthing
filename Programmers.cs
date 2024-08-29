@@ -4,21 +4,37 @@ using System.Formats.Asn1;
 using System.Globalization;
 using System.Reflection.Metadata;
 using System.Text;
+using System.Collections.Generic;
 
 
 namespace aleifj
 {
     public class Programmers
     {
+        public static int[] Solution0829(int[] arr)//배열의 원소만큼 추가하기, using System.Collections.Generic;
+        {
+            
+
+            List<int> list = new List<int>();
+            for (int i = 0; i < arr.Length; i++)
+            {
+                for (int j = 0; j < arr[i]; j++)
+                {
+                    list.Add(arr[i]);
+                }
+            }
+
+            return list.ToArray();
+        }
         public static int Solution08282(int a, int b)//주사위 게임1
         {//두 정수 a와 b가 매개변수로 주어질 때, 얻는 점수를 return 하는 solution 함수를 작성해 주세요.
             int answer = 0;
 
-            if(a % 2 != 0 && b % 2 != 0)
+            if (a % 2 != 0 && b % 2 != 0)
             {
-                answer = (a * a) +(b * b); 
+                answer = (a * a) + (b * b);
             }
-            else if(a % 2 == 0 && b % 2 == 0)
+            else if (a % 2 == 0 && b % 2 == 0)
             {
                 answer = Math.Abs(a - b);
             }
