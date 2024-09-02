@@ -11,9 +11,44 @@ namespace aleifj
 {
     public class Programmers
     {
+
+        public int[] Solution0902(int n)//콜라츠 수열 만들기
+        {//개길어
+            List<int> list = new List<int>();
+
+            /*while (n != 1)
+            {
+                list.Add(n);//n을 list에 넣는다.
+                if (n % 2 == 0)
+                {
+                    n /= 2;
+                }
+                else
+                {
+                    n = 3 * n + 1;
+                }
+            }이게 맞음
+            list.Add(1);*/
+            for (int i = 0; i < list.Count; i++)
+            {
+                list.Add(n);
+                if (n % 2 == 0)
+                {
+                    n /= 2;
+                }
+                else
+                {
+                    n = 3 * n + 1;
+                }
+
+            }
+            list.Add(1);
+            
+            return list.ToArray();
+        }
         public static int[] Solution0829(int[] arr)//배열의 원소만큼 추가하기, using System.Collections.Generic;
         {
-            
+
 
             List<int> list = new List<int>();
             for (int i = 0; i < arr.Length; i++)

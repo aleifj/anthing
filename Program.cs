@@ -76,10 +76,11 @@ internal class Program
         Console.WriteLine(cc.GetSData());*/
 
         //int[] numLog = new int[]{0, 1, 0, 10, 0, 1, 0, 10, 0, -1, -2, -1};
-        int[] arr = {6,6};
-        int[] answer = Programmers.Solution0829(arr);
+        Programmers pg = new Programmers();//staic안쓰고 싶으면 이렇게 선언먼저 하고
+        //pg.Solution0902(10);프로그레머스(pg)의 불러올 코드를 정해주면 됨.
+        //int[] answer = Programmers.Solution0902(arr);
         //Console.WriteLine(answer);
-        Utils.PrintIntArray(answer);//뜻: Utils 안에있는 PrintIntArray를 쓴다.
+        Utils.PrintIntArray(pg.Solution0902(10));//뜻: Utils 안에있는 PrintIntArray를 쓴다.
         //CSharpStudy.DicSample();
 
     
