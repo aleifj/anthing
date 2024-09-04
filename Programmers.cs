@@ -11,7 +11,45 @@ namespace aleifj
 {
     public class Programmers
     {
+        public int Solution09042(int[] numbers)//최댓값 만들기(2)
+        {//정수 배열 numbers가 매개변수로 주어집니다. numbers의 원소 중 두 개를 곱해 만들 수 있는 최댓값을 return하도록 solution 함수를 완성해주세요.
+            int answer = 0;
+        
+            for(int i = 0; i < numbers.Length - 1; i++)
+            {
+                
+                for(int j = i + 1; j < numbers.Length; j++)
+                {
+                    if(numbers[i] < 0 && numbers[j] < 0)
+                    {
+                        if(answer < Math.Abs(numbers[i]) * Math.Abs(numbers[j]))
+                        answer = Math.Abs(numbers[i]) * Math.Abs(numbers[j]);
+                    }
+                    else if(answer < numbers[i] * numbers[j])
+                    {
+                        answer = numbers[i] * numbers[j];
+                    }
+                }
+            }
 
+            return answer;
+        }
+        public int Solution0904(int[] numbers)//최댓값 만들기(1)
+        {//정수 배열 numbers가 매개변수로 주어집니다. numbers의 원소 중 두 개를 곱해 만들 수 있는 최댓값을 return하도록 solution 함수를 완성해주세요.
+            int answer = 0;
+            for (int i = 0; i < numbers.Length - 1; i++)
+            {
+                for (int j = i + 1; j < numbers.Length; j++)
+                {
+                    if (answer < numbers[i] * numbers[j])
+                    {
+                        answer = numbers[i] * numbers[j];
+                    }
+                }
+            }
+
+            return answer;
+        }
         public int[] Solution0902(int n)//콜라츠 수열 만들기
         {//개길어
             List<int> list = new List<int>();
