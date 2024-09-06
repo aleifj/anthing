@@ -39,6 +39,11 @@ namespace aleifj
 
             run = RunThis;//이렇게 요약 가능
             run(100);
+
+            //event
+            run += RunThat;//+=를 쓰면 여러 매소드를 리스트 형식으로 넣을 수 있음.
+            run += RunThis;//멀티캐스팅이라고 함.
+            run = RunThat;//까먹고 연산자 잘못쓰면 멀티캐스팅 다 나라감.
         }
         #endregion
     }
