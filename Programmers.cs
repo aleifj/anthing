@@ -11,13 +11,27 @@ namespace aleifj
 {
     public class Programmers
     {
+        public int Solution0909(string number)//9로 나눈 나머지.
+        {
+            
+
+            int number1 = 0;//string형태인 number를 int형태로 받을 정수 선언.
+            foreach(var item in number)//string은 char의 배열임으로 배열의 각 값을 돌면서 더해준다.
+            {
+                //각 item의 int값을 더해준다.
+                int val = item - '0';
+                number1 += val;
+            }
+            
+            return number1 % 9;
+        }
         public int Solution09042(int[] numbers)//최댓값 만들기(2)
         {//정수 배열 numbers가 매개변수로 주어집니다. numbers의 원소 중 두 개를 곱해 만들 수 있는 최댓값을 return하도록 solution 함수를 완성해주세요.
             int answer = -100000000;//아니 이게 뭔데
-        
-            for(int i = 0; i < numbers.Length - 1; i++)
-            {                
-                for(int j = i + 1; j < numbers.Length; j++)
+
+            for (int i = 0; i < numbers.Length - 1; i++)
+            {
+                for (int j = i + 1; j < numbers.Length; j++)
                 {
                     if(numbers[i] < 0 && numbers[j] < 0)
                     {
