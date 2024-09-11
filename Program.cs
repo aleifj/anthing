@@ -7,8 +7,10 @@ using System.Runtime.CompilerServices;
 
 internal class Program
 {
+    #region anithing
     class ListClass
     {
+
         List<int> list = new List<int>();
     }
     public static void NullableSample()
@@ -39,9 +41,6 @@ internal class Program
         return list?.Count ?? 0;
         //list가 null인가?. null이면 0, 아니면 Count를 return하라
     }
-
-
-
     public struct Scustomer
     {//struct는 상속 불가
         public string name;
@@ -61,17 +60,17 @@ internal class Program
             string data = $"{name}, {age}";
             return data;
         }
-        
     }
+#endregion
     private static void Main(string[] args)
     {
 
-        string numLog = "78720646226947352489";
+        string numLog = "40000 * 40000";
         Programmers pg = new Programmers();//staic안쓰고 싶으면 이렇게 선언먼저 하고
-        int answer = pg.Solution0909(numLog);//프로그레머스(pg)의 불러올 코드를 정해주면 됨.
+        int answer = pg.Solution09112(numLog);//프로그레머스(pg)의 불러올 코드를 정해주면 됨.
         //int answer = Programmers.Solution0902(arr);
         Console.WriteLine(answer);
-        //Utils.PrintIntArray(pg.Solution0904(1, 2, 3, 4, 5));//뜻: Utils 안에있는 PrintIntArray를 쓴다.
+        //Utils.PrintIntArray(answer);//뜻: Utils 안에있는 PrintIntArray를 쓴다.
 
         /*CSharpStudy CS = new CSharpStudy();
         CS.Perform();*/

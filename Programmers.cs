@@ -11,10 +11,51 @@ namespace aleifj
 {
     public class Programmers
     {
+        public int Solution09112(string binomial)//간단한 식 계산하기
+        {
+            int answer = 0;
+            
+            string[] word = binomial.Split(' ');//string을 숫자와 수식으로 분리
+            
+            int num = Int32.Parse(word[0]);//각 숫자(string)를 integer로 변환
+            int num1 = Int32.Parse(word[2]);
+            
+            switch (word[1])
+            {//각 수식에 맞게 계산
+                case "+":
+                    answer = num + num1;
+                    break;
+
+                case "-":
+                    answer = num - num1;
+                    break;
+
+                case "*":
+                    answer = num * num1;
+                    break;
+
+                case "/":
+                    answer = num / num1;
+                    break;
+            }
+            return answer;
+        }
+        public int[] Solution0911(int n)//약수 구하기
+        {//정수 n이 매개변수로 주어질 때, n의 약수를 오름차순으로 담은 배열을 return하도록 solution 함수를 완성해주세요.
+            List<int> list = new List<int>();
+
+            for (int i = 1; i <= n; i++)
+            {
+                if (n % i == 0)
+                {
+                    list.Add(i);
+                }
+
+            }
+            return list.ToArray();
+        }
         public int Solution0909(string number)//9로 나눈 나머지.
         {
-            
-
             int number1 = 0;//string형태인 number를 int형태로 받을 정수 선언.
             foreach(var item in number)//string은 char의 배열임으로 배열의 각 값을 돌면서 더해준다.
             {
