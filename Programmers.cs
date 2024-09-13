@@ -11,15 +11,28 @@ namespace aleifj
 {
     public class Programmers
     {
+        public string Solution0913(int age)//외계행성의 나이.
+        {
+            string answer = "";
+            while(age > 0)
+            {
+                int val = age % 10;//1의 자리(나머지).
+                char chr = Convert.ToChar(val + 'a');//1의 자리에서 나온 수와 아스키코드 'a'의 값을 더하여 그 값을 convert한다.
+                answer = chr + answer;//answer = 2번째로 구한 chr + 1번째로 구한 chr
+                age = age / 10;//10의 자리(몫).그리고 다시 위로감.
+            }
+
+            return answer;
+        }
         public int Solution09112(string binomial)//간단한 식 계산하기
         {
             int answer = 0;
-            
+
             string[] word = binomial.Split(' ');//string을 숫자와 수식으로 분리
-            
+
             int num = Int32.Parse(word[0]);//각 숫자(string)를 integer로 변환
             int num1 = Int32.Parse(word[2]);
-            
+
             switch (word[1])
             {//각 수식에 맞게 계산
                 case "+":

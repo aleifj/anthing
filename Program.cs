@@ -65,9 +65,9 @@ internal class Program
     private static void Main(string[] args)
     {
 
-        string numLog = "40000 * 40000";
+        int numLog = 100;
         Programmers pg = new Programmers();//staic안쓰고 싶으면 이렇게 선언먼저 하고
-        int answer = pg.Solution09112(numLog);//프로그레머스(pg)의 불러올 코드를 정해주면 됨.
+        string answer = pg.Solution0913(numLog);//프로그레머스(pg)의 불러올 코드를 정해주면 됨.
         //int answer = Programmers.Solution0902(arr);
         Console.WriteLine(answer);
         //Utils.PrintIntArray(answer);//뜻: Utils 안에있는 PrintIntArray를 쓴다.
