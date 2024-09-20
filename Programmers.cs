@@ -11,10 +11,57 @@ namespace aleifj
 {
     public class Programmers
     {
+        public string[] Solution09202(string[] todo_list, bool[] finished)//할 일 목록
+        {/*할 일이 담긴 문자열 배열 todo_list, 마쳤는지를 나타내는 boolean 배열 finished가 매개변수로 주어질 때, 
+        todo_list에서 아직 마치지 못한 일들을 순서대로 담은 문자열 배열을 return 하는 solution 함수를 작성해 주세요.*/
+            int length = 0;//배열의 크기 구하기.
+            foreach(var item in finished)
+            {
+                if(item == false)
+                {
+                    length++;
+                }
+            }
+            string[] answer = new string[length];//구한 크기많큼 answer에 대입.
+            int ai =0;
+            for(int i = 0; i < todo_list.Length; i++)
+            {
+                
+            }
+            
+
+
+            return answer;
+        }
+        public string Solution0920(string my_string, int num1, int num2)//인덱스 바꾸기
+        {//문자열 my_string과 정수 num1, num2가 매개변수로 주어질 때, my_string에서 인덱스 num1과 인덱스 num2에 해당하는 문자를 바꾼 문자열을 return 하도록 solution 함수를 완성해보세요.
+
+            string answer = "";
+            //num1,num2에 해당하는 글자를 지정한다.
+            char chr1 = my_string[num2];
+            char chr2 = my_string[num1];
+
+            for (int i = 0; i < my_string.Length; i++)
+            {
+                if (i == num1)//num1과 같으면
+                {
+                    answer += chr1;//num2의 자리에 있는 char를 넣어라.
+                }
+                else if (i == num2)//num2와 같으면
+                {
+                    answer += chr2;//num1의 자리에 있는 char를 넣어라.
+                }
+                else
+                {
+                    answer += my_string[i];//나머지는 그대로 넣어라.
+                }
+            }
+            return answer;
+        }
         public string Solution0913(int age)//외계행성의 나이.
         {
             string answer = "";
-            while(age > 0)
+            while (age > 0)
             {
                 int val = age % 10;//1의 자리(나머지).
                 char chr = Convert.ToChar(val + 'a');//1의 자리에서 나온 수와 아스키코드 'a'의 값을 더하여 그 값을 convert한다.
@@ -70,13 +117,13 @@ namespace aleifj
         public int Solution0909(string number)//9로 나눈 나머지.
         {
             int number1 = 0;//string형태인 number를 int형태로 받을 정수 선언.
-            foreach(var item in number)//string은 char의 배열임으로 배열의 각 값을 돌면서 더해준다.
+            foreach (var item in number)//string은 char의 배열임으로 배열의 각 값을 돌면서 더해준다.
             {
                 //각 item의 int값을 더해준다.
                 int val = item - '0';
                 number1 += val;
             }
-            
+
             return number1 % 9;
         }
         public int Solution09042(int[] numbers)//최댓값 만들기(2)
@@ -87,12 +134,12 @@ namespace aleifj
             {
                 for (int j = i + 1; j < numbers.Length; j++)
                 {
-                    if(numbers[i] < 0 && numbers[j] < 0)
+                    if (numbers[i] < 0 && numbers[j] < 0)
                     {
-                        if(answer < Math.Abs(numbers[i]) * Math.Abs(numbers[j]))
-                        answer = Math.Abs(numbers[i]) * Math.Abs(numbers[j]);
+                        if (answer < Math.Abs(numbers[i]) * Math.Abs(numbers[j]))
+                            answer = Math.Abs(numbers[i]) * Math.Abs(numbers[j]);
                     }
-                    else if(answer < numbers[i] * numbers[j])
+                    else if (answer < numbers[i] * numbers[j])
                     {
                         answer = numbers[i] * numbers[j];
                     }
