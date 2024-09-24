@@ -65,12 +65,12 @@ internal class Program
     private static void Main(string[] args)
     {
 
-        var numLog = new string []{"problemsolving", "practiceguitar", "swim", "studygraph"};
-        var num1 = new bool []{true, false, true, false};
-        
+        //var board = [0, 1, 2],[1, 2, 3],[2, 3, 4],[3, 4, 5];
+        int[,] board = new int[2, 3];
+        int k = 2;
+
         Programmers pg = new Programmers();//staic안쓰고 싶으면 이렇게 선언먼저 하고
-        string[] answer = pg.Solution09202(numLog, num1);//프로그레머스(pg)의 불러올 코드를 정해주면 됨.
-        //int answer = Programmers.Solution0902(arr);
+        string[] answer = Solution0924(int[,] board, k);
         Console.WriteLine(answer);
         //Utils.PrintIntArray(answer);//뜻: Utils 안에있는 PrintIntArray를 쓴다.
 

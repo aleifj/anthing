@@ -11,11 +11,26 @@ namespace aleifj
 {
     public class Programmers
     {
+        public int Solution0924(int[,] board, int k)//이차원 배열 대각선 순회하기
+        {
+            int answer = 0;
+            for(int i = 0; i < board.GetLength(0); i++)
+            {
+                for(int j = 0; j < board.GetLength(1); j++)
+                {
+                    if(i+j <= k)
+                    {
+                        answer+=board[i,j];
+                    }
+                }
+            }
+            return answer;
+        }
         public string[] Solution09202(string[] todo_list, bool[] finished)//할 일 목록
         {/*할 일이 담긴 문자열 배열 todo_list, 마쳤는지를 나타내는 boolean 배열 finished가 매개변수로 주어질 때, 
         todo_list에서 아직 마치지 못한 일들을 순서대로 담은 문자열 배열을 return 하는 solution 함수를 작성해 주세요.*/
             int length = 0;//배열의 크기 구하기.
-            foreach(var item in finished)
+            foreach (var item in finished)
             {
                 if(item == false)
                 {
