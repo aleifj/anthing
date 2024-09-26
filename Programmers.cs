@@ -11,6 +11,19 @@ namespace aleifj
 {
     public class Programmers
     {
+        public string Solution0926(string my_string)//중복된 문자 제거
+        {//my_string에서 중복된 문자를 제거하고 하나의 문자만 남긴 문자열을 return하도록 solution 함수를 완성해주세요.
+            string answer = "";
+            //스트링을 foreach로 반복
+            foreach (var item in my_string)
+            {
+                if (!answer.Contains(item))//answer에 item이 없으면
+                {
+                    answer += item;//answer에 item추가.
+                }
+            }
+            return answer;
+        }
         public int Solution0924(int[,] board, int k)//이차원 배열 대각선 순회하기
         {
             int answer = 0;
