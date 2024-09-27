@@ -11,6 +11,20 @@ namespace aleifj
 {
     public class Programmers
     {
+        public int[] Solution0927(int[] emergency)//진료순서 정하기
+        {//정수 배열 emergency가 매개변수로 주어질 때 응급도가 높은 순서대로 진료 순서를 정한 배열을 return하도록 solution 함수를 완성해주세요.
+            int[] answer = new int[emergency.Length];
+
+            var list = new List<int>(emergency);
+            list.Sort();//정렬(작은 수 부터)
+            list.Reverse();//정렬반전
+            for (int i = 0; i < answer.Length; i++)
+            {
+                answer[i] = list.IndexOf(emergency[i]) + 1;
+            }
+
+            return answer;
+        }
         public string Solution0926(string my_string)//중복된 문자 제거
         {//my_string에서 중복된 문자를 제거하고 하나의 문자만 남긴 문자열을 return하도록 solution 함수를 완성해주세요.
             string answer = "";
