@@ -11,6 +11,55 @@ namespace aleifj
 {
     public class Programmers
     {
+        public int Solution09302(string my_string)//숨어있는 숫자의 덧셈 (2)
+        {
+            int answer = 0;
+            bool a = false;
+            int val = 0;
+
+            foreach (var item in my_string)
+            {
+                if ((item >= '0') && (item <= '9'))
+                {
+                    if (a == true)
+                    {
+                        //val값에 10곱하고 계산
+                        val = val * 10 + (item - '0');
+                    }
+                    else
+                    {
+                        //val에 값 더함
+                        val += item - '0';
+                        //연속 숫자 여부 켜기
+                        a = true;
+                    }
+                }
+                else
+                {
+                    a = false;
+                    answer += val;
+                    val = 0;
+                }
+            }
+            answer += val;
+            return answer;
+        }
+        public int Solution0930(string my_string)//숨어있는 숫자의 덧셈 (1)
+        {
+            int answer = 0;
+
+            //my_string은 char배열이므로,하나씩 돈다.
+            for (int i = 0; i < my_string.Length; i++)
+            {
+                //얻어온 char가'0'과'9'사이에 있다면
+                if ((my_string[i] >= '0') && (my_string[i] <= '9'))
+                {
+                    //answer에 그 값을 더한다.
+                    answer += (my_string[i] - '0');
+                }
+            }
+            return answer;
+        }
         public int[] Solution0927(int[] emergency)//진료순서 정하기
         {//정수 배열 emergency가 매개변수로 주어질 때 응급도가 높은 순서대로 진료 순서를 정한 배열을 return하도록 solution 함수를 완성해주세요.
             int[] answer = new int[emergency.Length];
