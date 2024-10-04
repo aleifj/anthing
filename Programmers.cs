@@ -11,6 +11,51 @@ namespace aleifj
 {
     public class Programmers
     {
+        public int Solution10042(int[] array)//7의 개수
+        {//정수 배열 array가 매개변수로 주어질 때, 7이 총 몇 개 있는지 return 하도록 solution 함수를 완성해보세요.
+            int answer = 0;
+            var sb = new StringBuilder();
+            foreach(var item in array)
+            {
+                sb.Append(item);
+            }
+            string str = sb.ToString();
+
+            foreach(var item in str)
+            {
+                if(item == '7')
+                {
+                    answer++;
+                }
+            }
+            return answer;
+        }
+        public string[] Solution1004(string my_str, int n)//잘라서 배열로 저장하기
+        {// my_str을 길이 n씩 잘라서 저장한 배열을 return하도록 solution 함수를 완성해주세요.
+            int length = my_str.Length / n;//리턴 할 배열의 크기를 먼저 구함
+
+            if (my_str.Length % n > 0)
+            {//my_str를 n으로 나누고 나머지가 있다면.
+                length++;//리턴 할 배열의 크기를 하나 더 마련함.
+            }
+
+            string[] answer = new string[length];
+
+            int index = 0;//한 배열에 n개만큼 들어갈 때 쓸 미지수
+            int cnt = 0;//n개가 채워지면 다음 배열로 넘어가게 만들 미지수
+
+            foreach(var item in my_str)
+            {
+                answer[index] = answer[index] + item;
+                cnt++;
+                if(cnt == n)
+                {
+                    index++;
+                    cnt = 0;
+                }
+            }
+            return answer;
+        }
         public int Solution09302(string my_string)//숨어있는 숫자의 덧셈 (2)
         {
             int answer = 0;
