@@ -11,11 +11,29 @@ namespace aleifj
 {
     public class Programmers
     {
+        public int Solution1007(string[] order)//커피 심부름
+        {
+            int answer = 0;
+
+            foreach(var item in order)
+            {
+                if(item.Contains("cafelatte"))
+                {
+                    answer += 5000;
+                }
+                else
+                {
+                    answer += 4500;
+                }
+            }
+
+            return answer;
+        }
         public int Solution10042(int[] array)//7의 개수
         {//정수 배열 array가 매개변수로 주어질 때, 7이 총 몇 개 있는지 return 하도록 solution 함수를 완성해보세요.
             int answer = 0;
             var sb = new StringBuilder();
-            foreach(var item in array)
+            foreach (var item in array)
             {
                 sb.Append(item);
             }
