@@ -64,9 +64,10 @@ internal class Program
 #endregion
     private static void Main(string[] args)
     {
-        string[] order = new string[] {"americanoice", "americano", "iceamericano"};
+        string a = "582";
+        string b = "734";
         Programmers pg = new Programmers();//staic안쓰고 싶으면 이렇게 선언먼저 하고
-        int answer = pg.Solution1007(order);
+        string answer = pg.Solution10082("582", "734");
         Console.WriteLine(answer);
         //Utils.PrintIntArray(answer);//뜻: Utils 안에있는 PrintIntArray를 쓴다.
 

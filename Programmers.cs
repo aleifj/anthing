@@ -5,17 +5,51 @@ using System.Globalization;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 
 namespace aleifj
 {
     public class Programmers
     {
+        public string Solution10082(string a, string b)//두 수의 합
+        {//0 이상의 두 정수가 문자열 a, b로 주어질 때, a + b의 값을 문자열로 return 하는 solution 함수를 작성해 주세요.
+            var sb = new StringBuilder();
+
+
+
+            return sb.ToString();
+        }
+        public int Solution1008(string my_string)//문자열 계산하기
+        {
+            int answer = 0;
+            int num1 = 0;
+            int temp = 0;
+            //숫자와 수식으로 분리하기
+            string[] str = my_string.Split(" ");
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (str[i].CompareTo("+") == 0)
+                {
+                    num1 = 1;
+                }
+                else if(str[i].CompareTo("-") == 0)
+                {
+                    num1 = -1;
+                }
+                else
+                {
+                    temp = Convert.ToInt32(str);
+                }
+            }
+            return answer;
+        }
         public int Solution1007(string[] order)//커피 심부름
         {
             int answer = 0;
 
-            foreach(var item in order)
+            foreach (var item in order)
             {
                 if(item.Contains("cafelatte"))
                 {
