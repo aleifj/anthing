@@ -31,15 +31,24 @@ namespace aleifj
                     {
                         x -= 1;
                     }
-                    else if (x < boardRight)
+                }
+                else if(item.CompareTo("right") == 0)
+                {
+                    if (x < boardRight)
                     {
                         x += 1;
                     }
-                    else if (y > boardDown)
+                }
+                else if(item.CompareTo("down") == 0)
+                {
+                    if (y > boardDown)
                     {
                         y -= 1;
                     }
-                    else
+                }
+                else
+                {
+                    if(y < boardUp)
                     {
                         y += 1;
                     }

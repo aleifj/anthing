@@ -65,8 +65,8 @@ internal class Program
 #endregion
     private static void Main(string[] args)
     {
-        string[] str1 = new string[]{"left", "right", "up", "right", "right"};
-        int[] board = new int[]{11, 11};
+        string[] str1 = new string[]{"down", "down", "down", "down", "down"};
+        int[] board = new int[]{7, 9};
         Programmers pg = new Programmers();//staic안쓰고 싶으면 이렇게 선언먼저 하고
         int[] answer = pg.Solution1010(str1, board);
         //Console.WriteLine(answer);
