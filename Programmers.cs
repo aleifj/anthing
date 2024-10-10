@@ -6,12 +6,49 @@ using System.Reflection.Metadata;
 using System.Text;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 
 
 namespace aleifj
 {
     public class Programmers
     {
+        public int[] Solution1010(string[] keyinput, int[] board)//캐릭터의 좌표
+        {//엄청 길어
+            int[] answer = new int[2];
+            int x = 0;
+            int y = 0;
+            int boardRight = (board[0] - 1) / 2;
+            int boardLeft = -((board[0] - 1) / 2);
+            int boardUp = (board[1] - 1) / 2;
+            int boardDown = -((board[1] - 1) / 2);
+
+            foreach (var item in keyinput)
+            {
+                if (item.CompareTo("left") == 0)
+                {
+                    if (x > boardLeft)
+                    {
+                        x -= 1;
+                    }
+                    else if (x < boardRight)
+                    {
+                        x += 1;
+                    }
+                    else if (y > boardDown)
+                    {
+                        y -= 1;
+                    }
+                    else
+                    {
+                        y += 1;
+                    }
+                }
+            }
+            answer[0] = x;
+            answer[1] = y;
+            return answer;
+        }
         public string Solution10082(string a, string b)//두 수의 합
         {//0 이상의 두 정수가 문자열 a, b로 주어질 때, a + b의 값을 문자열로 return 하는 solution 함수를 작성해 주세요.
             var sb = new StringBuilder();

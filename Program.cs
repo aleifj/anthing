@@ -4,6 +4,7 @@ using Myevan;
 using aleifj;
 using System.Globalization;
 using System.Runtime.CompilerServices;
+using System.Xml.Xsl;
 
 internal class Program
 {
@@ -64,12 +65,12 @@ internal class Program
 #endregion
     private static void Main(string[] args)
     {
-        string a = "582";
-        string b = "734";
+        string[] str1 = new string[]{"left", "right", "up", "right", "right"};
+        int[] board = new int[]{11, 11};
         Programmers pg = new Programmers();//staic안쓰고 싶으면 이렇게 선언먼저 하고
-        string answer = pg.Solution10082("582", "734");
-        Console.WriteLine(answer);
-        //Utils.PrintIntArray(answer);//뜻: Utils 안에있는 PrintIntArray를 쓴다.
+        int[] answer = pg.Solution1010(str1, board);
+        //Console.WriteLine(answer);
+        Utils.PrintIntArray(answer);//뜻: Utils 안에있는 PrintIntArray를 쓴다.
 
         /*CSharpStudy CS = new CSharpStudy();
         CS.Perform();*/
