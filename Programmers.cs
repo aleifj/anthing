@@ -13,6 +13,27 @@ namespace aleifj
 {
     public class Programmers
     {
+        public string Solution1011(string[] id_pw, string[,] db)//로그인 성공
+        {
+            //db의 크기만큼 반복
+            for(int i = 0; i < db.Length; i++)
+            {
+                //id와 같은지
+                if(id_pw[0] == db[i, 0])
+                {
+                    //pw도 같은지
+                    if(id_pw[1] == db[i, 1])
+                    {
+                        return "Login";
+                    }
+                    else
+                    {
+                        return "Wrong pw";
+                    }
+                }
+            }
+            return "fail";
+        }
         public int[] Solution1010(string[] keyinput, int[] board)//캐릭터의 좌표
         {//엄청 길어
             int[] answer = new int[2];

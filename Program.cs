@@ -65,12 +65,12 @@ internal class Program
 #endregion
     private static void Main(string[] args)
     {
-        string[] str1 = new string[]{"down", "down", "down", "down", "down"};
-        int[] board = new int[]{7, 9};
+        string[] id_pw = {"programmer01", "15789"};
+        string[,] db =new string[,]{{"programmer02", "111111"}, {"programmer00", "134"}, {"programmer01", "1145"}};
         Programmers pg = new Programmers();//staic안쓰고 싶으면 이렇게 선언먼저 하고
-        int[] answer = pg.Solution1010(str1, board);
-        //Console.WriteLine(answer);
-        Utils.PrintIntArray(answer);//뜻: Utils 안에있는 PrintIntArray를 쓴다.
+        string answer = pg.Solution1011(id_pw, db);
+        Console.WriteLine(answer);
+        //Utils.PrintIntArray(answer);//뜻: Utils 안에있는 PrintIntArray를 쓴다.
 
         /*CSharpStudy CS = new CSharpStudy();
         CS.Perform();*/
