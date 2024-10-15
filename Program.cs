@@ -65,10 +65,9 @@ internal class Program
 #endregion
     private static void Main(string[] args)
     {
-        string[] id_pw = {"programmer01", "15789"};
-        string[,] db =new string[,]{{"programmer02", "111111"}, {"programmer00", "134"}, {"programmer01", "1145"}};
+        int chicken = 100;
         Programmers pg = new Programmers();//staic안쓰고 싶으면 이렇게 선언먼저 하고
-        string answer = pg.Solution1011(id_pw, db);
+        int answer = pg.Solution1015(chicken);
         Console.WriteLine(answer);
         //Utils.PrintIntArray(answer);//뜻: Utils 안에있는 PrintIntArray를 쓴다.
 

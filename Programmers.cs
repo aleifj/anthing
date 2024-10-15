@@ -13,10 +13,26 @@ namespace aleifj
 {
     public class Programmers
     {
+        public int Solution1015(int chicken)//치킨 쿠폰
+        {
+            int answer = 0;
+            int coupon = 0;
+
+            for(int i = 1; i <= chicken; i++)//치킨의 갯수만큼 돌면서
+            {
+                coupon += 1;//쿠폰 한장씩 받고
+                if(coupon >= 10)//쿠폰이 10장이 넘는다면
+                {
+                    coupon = 1;//10장으로 받은 치킨의 쿠폰 1장과
+                    answer++;//10장으로 받은 치킨1개를 셈하여
+                }
+            }
+            return answer;//답에 넣는다.
+        }
         public string Solution1011(string[] id_pw, string[,] db)//로그인 성공
         {
             //db의 크기만큼 반복
-            for(int i = 0; i < db.Length; i++)
+            for (int i = 0; i < db.Length; i++)
             {
                 //id와 같은지
                 if(id_pw[0] == db[i, 0])
