@@ -13,15 +13,38 @@ namespace aleifj
 {
     public class Programmers
     {
+        public string Solution10172(string code)//코드 처리하기
+        {
+            string answer = "";
+            return answer;
+        }
+        public int Solution1017(int n)//저주의 숫자 3
+        {
+            int answer = 0;
+            int num = 0;
+
+            for (int i = 1; i <= n; i++)
+            {
+                num++;
+                
+                if (num % 3 == 0 || num.ToString().Contains('3'))
+                {
+                    num += 1;
+                }
+                answer = num;
+            }
+
+            return answer;
+        }
         public int Solution1015(int chicken)//치킨 쿠폰
         {
             int answer = 0;
             int coupon = 0;
 
-            for(int i = 1; i <= chicken; i++)//치킨의 갯수만큼 돌면서
+            for (int i = 1; i <= chicken; i++)//치킨의 갯수만큼 돌면서
             {
                 coupon += 1;//쿠폰 한장씩 받고
-                if(coupon >= 10)//쿠폰이 10장이 넘는다면
+                if (coupon >= 10)//쿠폰이 10장이 넘는다면
                 {
                     coupon = 1;//10장으로 받은 치킨의 쿠폰 1장과
                     answer++;//10장으로 받은 치킨1개를 셈하여

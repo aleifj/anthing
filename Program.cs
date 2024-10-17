@@ -65,9 +65,9 @@ internal class Program
 #endregion
     private static void Main(string[] args)
     {
-        int chicken = 100;
+        int n = 15;
         Programmers pg = new Programmers();//staic안쓰고 싶으면 이렇게 선언먼저 하고
-        int answer = pg.Solution1015(chicken);
+        int answer = pg.Solution1017(n);
         Console.WriteLine(answer);
         //Utils.PrintIntArray(answer);//뜻: Utils 안에있는 PrintIntArray를 쓴다.
 
