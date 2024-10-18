@@ -65,11 +65,12 @@ internal class Program
 #endregion
     private static void Main(string[] args)
     {
-        int n = 15;
+        int l = 10;
+        int r = 20;
         Programmers pg = new Programmers();//staic안쓰고 싶으면 이렇게 선언먼저 하고
-        int answer = pg.Solution1017(n);
-        Console.WriteLine(answer);
-        //Utils.PrintIntArray(answer);//뜻: Utils 안에있는 PrintIntArray를 쓴다.
+        int[] answer = pg.Solution1018(l, r);
+        //Console.WriteLine(answer);
+        Utils.PrintIntArray(answer);//뜻: Utils 안에있는 PrintIntArray를 쓴다.
 
         /*CSharpStudy CS = new CSharpStudy();
         CS.Perform();*/

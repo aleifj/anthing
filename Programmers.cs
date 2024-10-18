@@ -13,6 +13,34 @@ namespace aleifj
 {
     public class Programmers
     {
+        public int[] Solution1018(int l, int r)//배열 만들기 2
+        {//l 이상 r이하의 정수 중에서 숫자 "0"과 "5"로만 이루어진 모든 정수를 오름차순으로 저장한 배열을 return 하는 solution 함수를 완성해 주세요.
+            int[] answer = new int[] {};
+            List<int> list = new List<int>();
+
+            for(int i = l; i <= r; i++)//l에서 r까지 for문을 돌린다
+            {
+                if(i % 5 != 0)//5로 나누어 떨어지지 않는 수는 제외
+                {
+                    continue;
+                }
+                else if(i % 5 == 0)
+                {
+                    string strI = i.ToString();//숫자를 문자열로 변환해서
+
+                    if(strI.Replace("0", "").Replace("5", "").Length == 0)//문자열이 0, 5로만 이루어 졌는지 판단.
+                    {
+                        list.Add(i);//맞으면 list에 넣어서
+                    }
+                }
+                answer = list.ToArray<int>();//list를 변환하여 answer에 넣고 출력
+                if(list.Count == 0)//0과 5가 없으면
+                {
+                    answer = new int[]{-1};//answer에 -1을 넣어 출력.
+                }
+            }
+            return answer;
+        }
         public string Solution10172(string code)//코드 처리하기
         {
             string answer = "";
@@ -21,18 +49,6 @@ namespace aleifj
         public int Solution1017(int n)//저주의 숫자 3
         {
             int answer = 0;
-            int num = 0;
-
-            for (int i = 1; i <= n; i++)
-            {
-                num++;
-                
-                if (num % 3 == 0 || num.ToString().Contains('3'))
-                {
-                    num += 1;
-                }
-                answer = num;
-            }
 
             return answer;
         }
