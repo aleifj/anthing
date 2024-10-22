@@ -7,18 +7,41 @@ using System.Text;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
+using Microsoft.VisualBasic;
 
 
 namespace aleifj
 {
     public class Programmers
     {
+        public int Solution1022(int[] common)//다음에 올 숫자
+        {
+            int answer = 0;
+
+            //인텍스 0, 1 두 개의 값으로 계산되는 결과를 담은 변수
+            int ZeroOne = common[1] - common[0];
+            //인덱스 1, 2 두 개의 값으로 계산되는 결과를 담은 변수
+            int OneTwo = common[2] - common[1];
+
+            //두 개의 변수가 같은가?
+            if(ZeroOne == OneTwo)
+            {//같으면 등차수열
+                //answer값 계산
+                answer = common[common.Length - 1] + ZeroOne;
+            }
+            else if(ZeroOne != OneTwo)
+            {//다르면 등비수열
+                //answer값 계산
+                answer = common[common.Length - 1] * (common[1] / common[0]);
+            }
+            return answer;
+        }
         public int[] Solution1018(int l, int r)//배열 만들기 2
         {//l 이상 r이하의 정수 중에서 숫자 "0"과 "5"로만 이루어진 모든 정수를 오름차순으로 저장한 배열을 return 하는 solution 함수를 완성해 주세요.
-            int[] answer = new int[] {};
+            int[] answer = new int[] { };
             List<int> list = new List<int>();
 
-            for(int i = l; i <= r; i++)//l에서 r까지 for문을 돌린다
+            for (int i = l; i <= r; i++)//l에서 r까지 for문을 돌린다
             {
                 if(i % 5 != 0)//5로 나누어 떨어지지 않는 수는 제외
                 {
