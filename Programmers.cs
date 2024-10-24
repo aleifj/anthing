@@ -14,6 +14,32 @@ namespace aleifj
 {
     public class Programmers
     {
+        public int Solution1024(int[,] board)//안전지대...실패...
+        {
+            int answer = 0;
+            int len = board.GetLength(0);
+            int[,] temp = new int[len + 2, len + 2];//
+
+            for (int x = 1; x <= len; x++)
+            {
+                for (int y = 1; y <= len; y++)
+                {
+                    if (board[x - 1, y - 1] == 1)
+                    {
+                        temp[x - 1, y - 1]++;
+                        temp[x    , y - 1]++;
+                        temp[x + 1, y - 1]++;
+                        temp[x - 1, y    ]++;
+                        temp[x    , y    ]++;
+                        temp[x + 1, y    ]++;
+                        temp[x - 1, y + 1]++;
+                        temp[x    , y + 1]++;
+                        temp[x + 1, y + 1]++;
+                    }
+                }
+            }
+            return answer;
+        }
         public int Solution1022(int[] common)//다음에 올 숫자
         {
             int answer = 0;
