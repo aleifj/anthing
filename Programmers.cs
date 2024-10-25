@@ -8,12 +8,106 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using Microsoft.VisualBasic;
+using System.Linq;
 
 
 namespace aleifj
 {
     public class Programmers
     {
+        private int[] into(int value, int[] dice)//여기도 주사위게임3
+        {
+            dice[value]++;
+            return dice;
+        }
+        public int Solution1025(int a, int b, int c, int d) //주사위 게임3, Linq 써야 함.
+        {
+            int answer = 0;
+            int[] dice = new int[7];
+            dice = into(a, dice);
+            dice = into(b, dice);
+            dice = into(c, dice);
+            dice = into(d, dice);
+
+            if (dice.Contains(4))
+            {
+                for (int p = 1; p <= 6; p++)
+                {
+                    if (dice[p] == 4)
+                    {
+                        answer = p * 1111;
+                        break;//굳이 쓸 필요는 없지만, 다른 if문을 도는것보다는 break해주는 것이 좋음.
+                    }
+                }
+
+            }
+            else if (dice.Contains(3))//3 - 1
+            {
+                for (int p = 1; p <= 6; p++)
+                {
+                    if (dice[p] == 3)
+                    {
+                        for (int q = 1; q <= 6; q++)
+                        {
+                            if(dice[q] == 1)
+                            {
+                                answer = (10 * p + q) * (10 * p +q);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            else if (dice.Contains(2))
+            {
+                if (dice.Contains(1))//2 - 1 - 1
+                {
+                    for (int q = 1; q <= 6; q++)
+                    {
+                        if (dice[q] == 1)
+                        {
+                            for (int r = q + 1; r <= 6; r++)
+                            {
+                                if (dice[r] == 1)
+                                {
+                                    answer = q * r;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+                else// 2 - 2
+                {
+                    for (int p = 1; p <= 6; p++)
+                    {
+                        if (dice[p] == 2)
+                        {
+                            for (int q = p + 1; q <= 6; q++)
+                            {
+                                if (dice[q] == 2)
+                                {
+                                    answer = (p + q) * (q - p);
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else// 1 - 1 - 1 - 1
+            {
+                answer = 6;
+                for (int i = 1; i <= 6; i++)
+                {
+                    if ((dice[i] == 1) && (answer > i))
+                    {
+                        answer = i;
+                    }
+                }
+            }
+            return answer;
+        }
         public int Solution1024(int[,] board)//안전지대...실패...
         {
             int answer = 0;
