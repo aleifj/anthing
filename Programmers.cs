@@ -15,6 +15,29 @@ namespace aleifj
 {
     public class Programmers
     {
+        public int Solution1028(int[,] lines)//겹치는 선분의 길이
+        {
+            int answer = 0;
+            int min = -100;
+            int max = 100;
+            int len = max - min + 1;
+            int[] line = new int[len];
+            for (int i2 = 0; i2 < 3; i2++)
+            {
+                for (int i = lines[i2, 0]; i < lines[i2, 1]; i++)
+                {
+                    line[i - min]++;
+                }
+            }
+            for (int i = min; i <= max; i++)
+            {
+                if (line[i - min] > 1)
+                {
+                    answer++;
+                }
+            }
+            return answer;
+        }
         private int[] into(int value, int[] dice)//여기도 주사위게임3
         {
             dice[value]++;
